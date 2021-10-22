@@ -1,0 +1,23 @@
+#include <pic16f877a.h>
+#include <xc.h>
+
+#define _XTAL_FREQ 20000000 
+
+void main() 
+{
+TRISBbits.TRISB5=1; 
+TRISCbits.TRISC0=0; 
+PORTCbits.RC0=0; 
+
+while(1) 
+{
+    if(PORTBbits.RB5 ==1){
+        PORTCbits.RC0=1;
+    }
+    else{
+        PORTCbits.RC0=0;
+    }
+}
+
+}
+
